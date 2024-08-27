@@ -364,8 +364,8 @@ footer {
   color: var(--text-dark);
 }
 
-/* Styles pour le formulaire de connexion */
-form {
+/* Styles pour le formulaire de création de compte */
+.register-form {
   max-width: 400px;
   margin: 50px auto;
   padding: 2rem;
@@ -374,23 +374,23 @@ form {
   background-color: #f9f9f9;
 }
 
-form div {
+.register-form div {
   margin-bottom: 1rem;
 }
 
-form label {
+.register-form label {
   display: block;
   margin-bottom: 0.5rem;
 }
 
-form input {
+.register-form input, .register-form select {
   width: 100%;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-button {
+.register-form button {
   width: 100%;
   padding: 1rem;
   background-color: #ff7171;
@@ -401,46 +401,61 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.register-form button:hover {
   background-color: #ff4d4d;
 }
- /* styles pour le formulaire de création du compte */ 
- .register-container {
+
+/* Styles pour le formulaire de connexion */
+.login-form {
   max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 50px auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
-.register-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.login-form div {
+  margin-bottom: 1rem;
 }
 
-.register-container form {
-  display: flex;
-  flex-direction: column;
+.login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.register-container input,
-.register-container select {
-  margin-bottom: 10px;
-  padding: 10px;
+.login-form input {
+  width: 100%;
+  padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.register-container button {
-  padding: 10px;
-  background-color: #28a745;
-  color: white;
+.login-form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #ff7171;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.register-container button:hover {
-  background-color: #218838;
+.login-form button:hover {
+  background-color: #ff4d4d;
+}
+
+p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Register.css'; // Assurez-vous de créer un fichier CSS pour la décoration
+import { Link } from 'react-router-dom';
+import 'my-app\styles\styles.css'; 
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -18,25 +19,38 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post('/api/register', formData);
-      alert('User registered successfully');
+      alert('Utilisateur enregistré avec succès');
     } catch (error) {
-      alert('Error registering user');
+      alert("Erreur lors de l'enregistrement de l'utilisateur");
     }
   };
 
   return (
-    <div className="register-container">
-      <h2>Create Account</h2>
+    <div className="register-form">
+      <h2>Créer un compte</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-        <select name="role" onChange={handleChange}>
-          <option value="doctor">Doctor</option>
-          <option value="secretary">Secretary</option>
-        </select>
-        <button type="submit">Register</button>
+        <div>
+          <label htmlFor="name">Nom</label>
+          <input type="text" id="name" name="name" placeholder="Nom" onChange={handleChange} required />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" onChange={handleChange} required />
+        </div>
+        <div>
+          <label htmlFor="password">Mot de passe</label>
+          <input type="password" id="password" name="password" placeholder="Mot de passe" onChange={handleChange} required />
+        </div>
+        <div>
+          <label htmlFor="role">Rôle</label>
+          <select id="role" name="role" onChange={handleChange}>
+            <option value="doctor">Médecin</option>
+            <option value="secretary">Secrétaire</option>
+          </select>
+        </div>
+        <button type="submit">S'inscrire</button>
       </form>
+      <p>Vous avez déjà un compte ? <Link to="/login">Connectez-vous ici</Link></p>
     </div>
   );
 };
